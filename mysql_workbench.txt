@@ -1,0 +1,19 @@
+step 1:download and install MySQL workbench (https://youtu.be/uj4OYk5nKCg?si=99CK7bj0dNpp29jH)
+step 2:After installation just check on command prompt: 
+       1.   mysql  --version
+       2.   mysql -u root -p  --->u stand for username and p stand for password bydefault username is root
+            Enter password: Nagma@123--> in my case password is different and your password will be diff
+step 3:download and install python 
+step 4:download and install PyCharm
+step 5: open PyCharm
+       1.open terminal-->*****pip install mysql-connector-python*****
+strp 6:database_connectivity.py--------------
+       *------------------------------------------------------------------*
+       import mysql.connector
+       def database_connection():
+          conn=mysql.connector.connect(host="localhost",password="Nagma@123",user="root")
+          if conn.is_connected():
+              print("connection established")
+       database_connection()
+       *------------------------------------------------------------------*
+
