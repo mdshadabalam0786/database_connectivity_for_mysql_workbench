@@ -1,0 +1,44 @@
+step 1:download and install MySQL workbench (https://youtu.be/uj4OYk5nKCg?si=99CK7bj0dNpp29jH)
+step 2:After installation just check on command prompt: 
+       1.   mysql  --version
+       2.   mysql -u root -p  --->u stand for username and p stand for password bydefault username is root
+            Enter password: Nagma@123--> in my case password is different and your password will be diff
+step 3:download and install jdk21 
+step 4:download and install eclipse
+step 5: download MySQL connector from this link -->(https://dev.mysql.com/downloads/connector/j/)
+       1.After download you will get zip folder just unzipped it
+       2.open eclipse
+       3.right click on project-->click on built --->click on configuration-->click on libraries---> 
+         click on module path--->click on external jars--->just select the MySQL connector path-->then ok
+strp 6:database_connectivity.java--------------
+       *------------------------------------------------------------------*
+       import java.sql.Connection;
+       import java.sql.DriverManager;
+       import java.sql.SQLException;
+       import java.sql.Statement;
+
+       public class Jdbc {
+       public static void main(String[] args) {
+               Connection con = null;
+               try {
+                     // Load the MySQL JDBC driver
+                     Class.forName("com.mysql.cj.jdbc.Driver");
+                  // Establish the connection to the database
+                  con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tree1", "root", "Nagma@123"); 
+                     System.out.println("connection established");
+                    }
+               catch (ClassNotFoundException e)
+                  {
+                   System.out.println("MySQL JDBC Driver not found");
+                   e.printStackTrace();
+                   }
+               catch (SQLException e) 
+                  {
+                   System.out.println("Database connection or query execution failed");
+                   e.printStackTrace();
+                  }       
+                 }
+                }
+
+       *------------------------------------------------------------------*
+
